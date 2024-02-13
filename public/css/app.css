@@ -8,3 +8,8 @@ Comment code
     height: 150px;
     border-radius: 50%;
 }
+
+body{
+    background-image: url(../asset/image/dark\ green.jpg);
+}
+

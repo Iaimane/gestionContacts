@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<body>
+    <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
+                <div class="card mb-3 container">
+                    <h4 class="card-title text-center">{{contact.name}} {{contact.prenom}}</h4>
+                    <img style="height: auto; max-width: 200px; display: block;" src="{{contact.avatar}}" class="avatar mx-auto my-3" alt="image avatar">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{contact.rue}}</li>
+                        <li class="list-group-item">{{contact.cp}}</li>
+                        <li class="list-group-item">{{contact.ville}}</li>
+                        <li class="list-group-item">{{contact.mail}}</li>
+                        <li class="list-group-item">
+                        {# {{contact.sexe == 0 ? "Homme" : "Femme"}} #}
+                            {% if contact.sexe ==0 %}
+                                <span class='badge text-bg-info'>Homme</span>
+                            {% else %}
+                                <span class='badge text-bg-warning'>Femme</span>
+                            {% endif %}
+                            <div class="card-body">
+                                <a href="{{path('app_contact')}}" class="btn btn-success btn-block text-center w-100">Retour à la liste</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+</body>
+{% endblock %}
