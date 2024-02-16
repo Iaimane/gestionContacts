@@ -11,11 +11,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ContactController extends AbstractController
 {
     /**
-     * @Route("/contacts", name="app_contact", methods={"GET"})  
+     * @Route("/contacts", name="contacts", methods={"GET"})  
      */
 
 
-     //ci dessus la route /contact, suivi de 2 paramètres name="app_contact" et et methods={"GET"}
+     //ci dessus la route /contact, suivi de 2 paramètres name="contacts" et et methods={"GET"}
    
     public function index(ContactRepository  $repo) : Response 
     

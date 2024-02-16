@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<body>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
+            <div class="card mb-3 container">
+                <h4 class="card-title text-center">{{Categorie.libelle}}</h4>
+                <img style="height: auto; max-width: 200px; display: block;" src="{{Categorie.image}}" class="imageCategorie mx-auto my-3" alt="image">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{Categorie.description}}</li>
+                  
+                       <div class="card-body">
+                        <a href="{{path('Categories')}}" class="btn btn-success btn-block text-center w-100">Retour à la liste</a>    
+                       </div>
+                </ul>
+            </div>
+        </div>
+</div>
+
+</body>
+{% endblock %}

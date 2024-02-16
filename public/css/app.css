@@ -2,6 +2,11 @@
     border-radius: 50%;
 }
 
+.imageCategorie{
+    border-radius: 15%;
+    width: 200px;
+}
+
 Comment code
 .imageCategories{
     width: 150px;
