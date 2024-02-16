@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CategorieController!{% endblock %}
+{% block title %}Liste des catégories{% endblock %}
 
 {% block body %}
+<h1 class="text-center pt-2 text-white">Liste des catégories</h1>
 <div class="row">
     {% for Categorie in Categories %} 
     {# {{dump(Categories)}} #}

@@ -1,0 +1,25 @@
+
+<div class="card mb-3 container">
+   <h4 class="card-title text-center">{{contact.name}} {{contact.prenom}}</h4>
+                <img style="height: auto; max-width: 200px; display: block;" src="{{contact.avatar}}" class="avatar mx-auto my-3" alt="image avatar">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{contact.rue}}</li>
+                    <li class="list-group-item">{{contact.cp}}</li>
+                    <li class="list-group-item">{{contact.ville}}</li>
+                    <li class="list-group-item">{{contact.mail}}</li>
+                    <li class="list-group-item">
+                    {# {{contact.sexe == 0 ? "Homme" : "Femme"}} #}
+                        {% if contact.sexe ==0 %}
+                            <span class='badge text-bg-info'>Homme</span>
+                        {% else %}
+                            <span class='badge text-bg-warning'>Femme</span>
+                        {% endif %}
+                    </li>
+                    <li class= "list-group-item">
+                        <a href="{{path('ficheCategorie', {'id': contact.category.id})}}" class="btn btn-link">{{contact.category.libelle}}</a>
+                    </li>
+                       <div class="card-body">
+                            <a href="{{path('ficheContact', {'id': contact.id})}}" class="btn btn-success btn-block text-center w-100">Détail ...</a>
+                        </div>
+                </ul>             
+</div>
