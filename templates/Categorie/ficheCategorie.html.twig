@@ -3,20 +3,53 @@
 
 <body>
     <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
-            <div class="card mb-3 container">
+        <div class="col-sm-12 col-md-12">
+            <div class="card mt-3 container">
                 <h4 class="card-title text-center">{{Categorie.libelle}}</h4>
                 <img style="height: auto; max-width: 200px; display: block;" src="{{Categorie.image}}" class="imageCategorie mx-auto my-3" alt="image">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">{{Categorie.description}}</li>
                   
-                       <div class="card-body">
-                        <a href="{{path('Categories')}}" class="btn btn-success btn-block text-center w-100">Retour à la liste</a>    
+                        <div class="card-body  text-center">
+                            <a href="{{path('Categories')}}" class="btn btn-link w-20">Retour à la liste des catégories</a>    
                        </div>
+                       <div class="card-body text-center">
+                            <a href="{{path('contacts')}}" class="btn btn-success btn-block w-20">Retour à la liste des contacts</a>
+                        </div>
                 </ul>
             </div>
         </div>
-</div>
+    </div>
 
+    <div class="row">
+        {% for contact in Categorie.contacts %} 
+            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
+                <div class="card mt-3 container">
+                    <h4 class="card-title text-center">{{contact.name}} {{contact.prenom}}</h4>
+                    <img style="height: auto; max-width: 200px; display: block;" src="{{contact.avatar}}" class="avatar mx-auto my-3" alt="image avatar">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{contact.rue}}</li>
+                        <li class="list-group-item">{{contact.cp}}</li>
+                        <li class="list-group-item">{{contact.ville}}</li>
+                        <li class="list-group-item">{{contact.mail}}</li>
+                        <li class="list-group-item">
+                        {# {{contact.sexe == 0 ? "Homme" : "Femme"}} #}
+                            {% if contact.sexe ==0 %}
+                                <span class='badge text-bg-info'>Homme</span>
+                            {% else %}
+                                <span class='badge text-bg-warning'>Femme</span>
+                            {% endif %}
+                        </li>
+                        <li class= "list-group-item">
+                            <a href="{{path('ficheCategorie', {'id': contact.category.id})}}" class="btn btn-link">{{contact.category.libelle}}</a>
+                        </li>
+                        <div class="card-body">
+                            <a href="{{path('ficheContact', {'id': contact.id})}}" class="btn btn-success btn-block text-center w-100">Détail ...</a>
+                        </div> 
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 {% endblock %}

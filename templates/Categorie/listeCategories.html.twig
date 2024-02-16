@@ -6,15 +6,15 @@
 <div class="row">
     {% for Categorie in Categories %} 
     {# {{dump(Categories)}} #}
-        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
-            <div class="card mb-3 container">
+        <div class="col-sm-12 col-md-12 col-lg-4 ">
+            <div class="card mt-3 container">
                 <h4 class="card-title text-center">{{Categorie.libelle}}</h4>
                 <img style="height: auto; max-width: 200px; display: block;" src="{{Categorie.image}}" class="imageCategorie mx-auto my-3" alt="image">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">{{Categorie.description}}</li>
                   
-                       <div class="card-body">
-                            <a href="{{path('ficheCategorie', {'id': Categorie.id})}}" class="btn btn-success btn-block text-center w-100">Détail ...</a>
+                       <div class="card-body text-center">
+                            <a href="{{path('ficheCategorie', {'id': Categorie.id})}}" class="btn btn-success btn-block text-center w-20">Voir la catégorie {{Categorie.libelle}}</a>
                         </div>
                 </ul>
             </div>
