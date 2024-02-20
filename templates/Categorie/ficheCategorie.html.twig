@@ -25,8 +25,10 @@
 
     <div class="row">
         {% for contact in Categorie.contacts %} 
-            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
-                <div class="card mt-3 container">
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">  
+                    {{ include('contact/_card.html.twig', {'bgColor0': 'lightBlue'  , 'bgColor1': 'pink'}) }}
+                </div> 
+                {# <div class="card mt-3 container">
                     <h4 class="card-title text-center">{{contact.name}} {{contact.prenom}}</h4>
                     <img style="height: auto; max-width: 200px; display: block;" src="{{contact.avatar}}" class="avatar mx-auto my-3" alt="image avatar">
                     <ul class="list-group list-group-flush">
@@ -36,7 +38,7 @@
                         <li class="list-group-item">{{contact.mail}}</li>
                         <li class="list-group-item">
                         {# {{contact.sexe == 0 ? "Homme" : "Femme"}} #}
-                            {% if contact.sexe ==0 %}
+                            {# {% if contact.sexe ==0 %}
                                 <span class='badge text-bg-info'>Homme</span>
                             {% else %}
                                 <span class='badge text-bg-warning'>Femme</span>
@@ -49,8 +51,7 @@
                             <a href="{{path('ficheContact', {'id': contact.id})}}" class="btn btn-success btn-block text-center w-100">Détail ...</a>
                         </div> 
                     </ul>
-                </div>
-            </div>
+                </div> #}
         {% endfor %}
     </div>
 </body>

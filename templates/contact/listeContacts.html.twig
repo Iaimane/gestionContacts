@@ -9,7 +9,7 @@
     {% for contact in contacts %} 
     {# {{dump(contacts)}} #}
     <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">  
-      {{ include('contact/_card.html.twig', {'mode': 'listeContacts'})}}
+      {{ include('contact/_card.html.twig', {'bgColor0': 'darkGreen'  , 'bgColor1': 'lightGreen'}) }}
     </div> 
     {% endfor %}
 </div>
