@@ -28,7 +28,7 @@ class ContactController extends AbstractController
         // dump($contacts); équivalent du console log on peut voir dans le profiler
         return $this->render('contact/listeContacts.html.twig', [ // on utilise la vue listeContacts.html.twig pour afficher le contenu, renvoi un tableau avec tous les contacts
             // 'controller_name' => 'ContactController',
-            "contacts"=>$contacts, //"contacts" est le nom de la variable qui sera utilisée dans notre vue twig (front)
+            "contact"=>$contacts, //"contacts" est le nom de la variable qui sera utilisée dans notre vue twig (front)
             //$contacts, variable back end 
             //on instancie une variable "contacts" à laquelle on rattache le contenu de la variable $contacts (back)
             // pour pouvoir utiliser en twig car le $contacts ne s'affiche pas en twig 

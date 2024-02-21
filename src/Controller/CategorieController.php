@@ -22,13 +22,15 @@ class CategorieController extends AbstractController
 
 
      /**
-     * @Route("/Categorie/{id}", name="ficheCategorie")
+     * @Route("/Categorie/{id}/{prevCont?}", name="ficheCategorie")
      */
-    public function ficheCategorie(CategorieRepository $repo, $id): Response
+    public function ficheCategorie(CategorieRepository $repo, $id, $prevCont): Response
     {   
         $Categorie= $repo->find($id);
         return $this->render('Categorie/ficheCategorie.html.twig', [
             'Categorie' => $Categorie,
+            'prevCont'=>$prevCont,
+            // previousCOntact est utilisé pour afficher le bouton "retour" en bas de page
         ]);
     }
 }

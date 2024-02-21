@@ -6,7 +6,7 @@
 <h1 class="text-center pt-2 text-white">Liste des contacts</h1>
 
 <div class="row">
-    {% for contact in contacts %} 
+    {% for contact in contact %} 
     {# {{dump(contacts)}} #}
     <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">  
       {{ include('contact/_card.html.twig', {'bgColor0': 'darkGreen'  , 'bgColor1': 'lightGreen'}) }}

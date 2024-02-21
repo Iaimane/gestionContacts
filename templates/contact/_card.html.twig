@@ -1,11 +1,12 @@
 
-<div class="card mt-3 container
+<div class="bgCard card mt-3 container
     {% if contact.sexe == 0 %}
-        border-info border-2
+        homme hommeCat
     {% else %}
-        border-warning border-2
+        femme femmeCat
     {% endif %}
-    ">
+    "> 
+    {# homme et femme ci-dessus correspondent aux classes en css #}
    <h4 class="card-title text-center">{{contact.name}} {{contact.prenom}}</h4>
                 <img style="height: auto; max-width: 200px; display: block;" src="{{contact.avatar}}" class="avatar mx-auto my-3" alt="image avatar">
                 <ul class="list-group list-group-flush">
@@ -22,7 +23,7 @@
                         {% endif %}
                     </li>
                     <li class= "list-group-item">
-                        <a href="{{path('ficheCategorie', {'id': contact.category.id})}}" class="btn btn-link">{{contact.category.libelle}}</a>
+                        <a href="{{path('ficheCategorie', {'id': contact.category.id, 'prevCont' : contact.id})}}" class="btn btn-link">{{contact.category.libelle}}</a>
                     </li>
                        <div class="card-body">
                             <a href="{{path('ficheContact', {'id': contact.id})}}" class="btn btn-success btn-block text-center w-100">Détail ...</a>

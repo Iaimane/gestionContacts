@@ -12,6 +12,12 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">{{Categorie.description}}</li>
                   
+                        
+                            {# {% if prevCont %}
+                                <a href={{path('ficheContact' , {'id' :prevCont})}} class="btn btn-danger">Retour</a>
+                                {% else %}
+                                <a href={{path('listeCategories')}} class="btn btn-danger">Retour</a>
+                            {% endif %} #}
                         <div class="card-body  text-center">
                             <a href="{{path('Categories')}}" class="btn btn-link w-20">Retour à la liste des catégories</a>    
                        </div>
@@ -26,7 +32,7 @@
     <div class="row">
         {% for contact in Categorie.contacts %} 
                 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">  
-                    {{ include('contact/_card.html.twig', {'bgColor0': 'lightBlue'  , 'bgColor1': 'pink'}) }}
+                    {{ include('contact/_card.html.twig', {'bgColor0': 'lightBlue' , 'bgColor1': 'pink'}) }}
                 </div> 
                 {# <div class="card mt-3 container">
                     <h4 class="card-title text-center">{{contact.name}} {{contact.prenom}}</h4>

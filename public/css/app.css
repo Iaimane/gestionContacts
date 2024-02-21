@@ -18,3 +18,26 @@ body{
     background-image: url(../asset/image/dark\ green.jpg);
 }
 
+.bgCard{
+    background-image: url(../asset/image/green.jpg);
+}
+
+.homme{
+    border-color: darkgreen;
+    border-width: 3px;
+}
+.femme{
+    border-color: lightgreen;
+    border-width: 3px;
+}
+
+.hommeCat{
+    border-color: lightblue;
+    border-width: 2px;
+}
+
+.femmeCat{
+    border-color: lightpink;
+    border-width: 2px;
+}
+
